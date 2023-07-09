@@ -1,0 +1,135 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Módulos e dependências
+/node_modules
+
+# Arquivos de log
+*.log
+
+# Arquivos de cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos gerados pelo IDE
+.idea/
+.vscode/
+
+# Arquivos compilados
+/dist
+
+# Arquivos de ambiente
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependências de construção
+/node_modules/
+/.pnp/
+.pnp.js
+
+# Diretórios de build
+/build
+/out
+
+# Arquivos de cache do Jest
+/.jest
+
+# Arquivos de cobertura de código
+/coverage
+
+# Arquivos de build do Storybook
+/.out
+
+# Arquivos de cache do Next.js
+/.next/
+/out/
+
+# Arquivos de cache do Gatsby.js
+.cache/
+/public/
+
+# Diretório de compilação do TypeScript
+/dist/
+
+# Diretório de compilação do Babel
+/lib/
+
+# Arquivos gerados pelo ESLint
+/eslint-cache
+.eslintignore
+.eslintcache
+
+# Arquivos gerados pelo Prettier
+/prettier.config.js
+.prettierignore
+
+# Arquivos gerados pelo ts-node
+/.ts-node
+
+# Diretório de saída do Yarn
+/.yarn/
+
+# Diretório de cache do Yarn
+.yarn-cache/
+
+# Outros arquivos e diretórios temporários
+/.sass-cache/
+/connect.lock
+/coverage/
+/libpeerconnection.log
+/npm-debug.log*
+/testem.log
+/yarn-error.log*
+/.npm
+/.eslintcache
+*.bak
+*.swp
+*~
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs_vista.db
