@@ -7,6 +7,7 @@ import styles from '../../../styles/home.module.scss';
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { AuthContext } from "@/contexts/AuthContext";
+import { toast } from 'react-toastify';
 import Link from "next/link";
 
 export default function SignUp() {
@@ -23,7 +24,7 @@ export default function SignUp() {
     event.preventDefault();
 
     if(name === '' || email === '' || password === ''){
-      alert("PREENCHA TODOS OS CAMPOS")
+      toast.error("PREENCHA TODOS OS CAMPOS")
       return;
     }
 

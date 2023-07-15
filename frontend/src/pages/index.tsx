@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { AuthContext } from "@/contexts/AuthContext";
+import { toast } from 'react-toastify';
 
 export default function Home() {
   const { signIn } = useContext(AuthContext)
@@ -18,7 +19,7 @@ export default function Home() {
   async function handleLogin(event: FormEvent) {
     event.preventDefault();
     if(email === '' || password === ''){
-      alert('Os campos de e-mail ou senha não podem ficar em branco')
+      toast.warning('Os campos de e-mail ou senha não podem ficar em branco')
       return;
     }
     setLoading(true);
