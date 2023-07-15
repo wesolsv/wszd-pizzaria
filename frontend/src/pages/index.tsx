@@ -17,10 +17,19 @@ export default function Home() {
 
   async function handleLogin(event: FormEvent) {
     event.preventDefault();
+    if(email === '' || password === ''){
+      alert('Os campos de e-mail ou senha não podem ficar em branco')
+      return;
+    }
+    setLoading(true);
+
     let data = {
       email, password
     }
-    await signIn(data)
+
+    await signIn(data);
+
+    setLoading(false);
   }
   return (
     <>
@@ -46,7 +55,7 @@ export default function Home() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <Button type="submit" loading={false}>
+            <Button type="submit" loading={loading}>
               Acessar
             </Button>
 
