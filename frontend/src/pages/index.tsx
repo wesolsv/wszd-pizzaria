@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { AuthContext } from "@/contexts/AuthContext";
 import { toast } from 'react-toastify';
+import { canSSRGuest } from "@/utils/canSSRGuest";
 
 export default function Home() {
   const { signIn } = useContext(AuthContext)
@@ -18,7 +19,7 @@ export default function Home() {
 
   async function handleLogin(event: FormEvent) {
     event.preventDefault();
-    if(email === '' || password === ''){
+    if (email === '' || password === '') {
       toast.warning('Os campos de e-mail ou senha não podem ficar em branco')
       return;
     }
@@ -69,3 +70,9 @@ export default function Home() {
     </>
   )
 }
+
+export const getServerSideProps = canSSRGuest(async (ctx) => {
+  return {
+    props: {}
+  }
+})
