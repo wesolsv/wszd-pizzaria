@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useContext } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import logoImg from '../../../public/logo.svg';
@@ -6,9 +6,13 @@ import styles from '../../../styles/home.module.scss';
 
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
+import { AuthContext } from "@/contexts/AuthContext";
 import Link from "next/link";
 
 export default function SignUp() {
+
+  const{signUp} = useContext(AuthContext);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,12 +21,20 @@ export default function SignUp() {
 
   async function handleSignUp(event: FormEvent) {
     event.preventDefault();
+
     if(name === '' || email === '' || password === ''){
       alert("PREENCHA TODOS OS CAMPOS")
       return;
     }
 
     setLoading(true);
+
+    let data = {
+      name, email, password
+    }
+    await signUp(data)
+
+    setLoading(false);
   }
   return (
     <>
