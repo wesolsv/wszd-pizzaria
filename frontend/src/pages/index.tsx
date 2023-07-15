@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Pizzaria Wszd</title>
+        <title>Wszd Pizzaria</title>
       </Head>
       <div className={styles.containerCenter}>
         <Image src={logoImg} alt="Logo pizzaria" />
