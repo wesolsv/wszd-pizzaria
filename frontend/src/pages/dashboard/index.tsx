@@ -55,7 +55,7 @@ export default function Dashboard({ orders }: HomeProps) {
     const apiClient = setupAPIClient();
 
     const response = await apiClient.get('/order/detail', {
-      params: { orderId: id }
+      params: { order_id: id }
     })
 
     setModalItem(response.data);
@@ -97,7 +97,11 @@ export default function Dashboard({ orders }: HomeProps) {
         </main>
 
         {modalVisible && (
-          <ModalOrder />
+          <ModalOrder 
+            isOpen={modalVisible}
+            onRequestClose={handleCloseModal}
+            order={modalItem}
+          />
         )}
       </div>
     </>
