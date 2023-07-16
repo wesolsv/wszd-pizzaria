@@ -8,7 +8,7 @@ class DetailOrderService{
     async execute({order_id}: DetailRequest){
         const orders = await prismaClient.item.findMany({
             where: {
-                id: order_id
+                order_id: order_id
             },
             include:{
                 product: true,
