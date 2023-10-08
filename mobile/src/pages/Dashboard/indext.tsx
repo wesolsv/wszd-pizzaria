@@ -3,7 +3,7 @@ import { View, Text, SafeAreaView, TouchableOpacity, TextInput, StyleSheet } fro
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { StackParamsList } from '../../routes/app.routes';
-
+import { api } from '../../services/api';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Dashboard() {
@@ -18,7 +18,13 @@ export default function Dashboard() {
     }
 
     //fazer requisição, abrir a mesa e navegar para proxima tela
-    navigation.navigate('Order', {number: number, order_id: 'sadçkjaçfasj'})
+    const response = await api.post('/order', {
+      table: Number(number)
+    })
+
+    navigation.navigate('Order', {number: number, order_id: response.data.id})
+
+    setNumber('');
   }
 
   return (
