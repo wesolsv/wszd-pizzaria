@@ -141,7 +141,7 @@ export default function Product({ categoryList }: CategoryProps) {
             />
 
             <textarea
-              placeholder="Digite o preço"
+              placeholder="Digite a descrição"
               className={styles.input}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
