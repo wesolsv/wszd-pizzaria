@@ -3,36 +3,48 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Dashboard from '../pages/Dashboard/indext';
 import Order from '../pages/Order';
+import FinishOrder  from '../pages/FinishOrder';
 
 export type StackParamsList = {
-    Dashboard: undefined;
-    Order: {
-        number: number | string;
-        order_id: string
-    };
+  Dashboard: undefined;
+  Order: {
+    number: number | string;
+    order_id: string
+  };
+  FinishOrder: undefined;
 };
-
-
 
 const Stack = createNativeStackNavigator<StackParamsList>();
 
 function AppRoutes() {
-    return (
-        <Stack.Navigator>
+  return (
+    <Stack.Navigator>
 
-            <Stack.Screen
-                name='Dashboard'
-                component={Dashboard}
-                options={{ headerShown: false }}
-            />
+      <Stack.Screen
+        name='Dashboard'
+        component={Dashboard}
+        options={{ headerShown: false }}
+      />
 
-            <Stack.Screen 
-                name= 'Order'
-                component={Order}
-                options={{headerShown: false}}
-            />
-        </Stack.Navigator>
-    )
+      <Stack.Screen
+        name='Order'
+        component={Order}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name='FinishOrder'
+        component={FinishOrder}
+        options={{
+          title: 'Finalizando',
+          headerStyle: {
+            backgroundColor: '#1d1d2e'
+          },
+          headerTintColor: '#FFF'
+        }}
+      />
+    </Stack.Navigator>
+  )
 }
 
 export default AppRoutes;
